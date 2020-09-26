@@ -59,3 +59,11 @@
      padding: 10px 20px;
      margin-top: 10px;
  }
+ .Form1{
+    align-items: center;
+    position: relative;
+    height: 200px;
+    width: 1000px;
+    margin-bottom: 50%;
+    margin-left: 60%;
+ }

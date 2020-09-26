@@ -10,14 +10,77 @@
 	<div class="container">
 		<div class="section">
 			<div class="content">
+				<form class='Form1' action="index.php" method="POST">
+						<div class='ac1'>
+						<p><label>Ingresa la operacion que quieres hacer: <input type="text" name="eleccion" list="listaNumeros"></label></p>
+
+								<datalist id="listaNumeros">
+
+									<label>O elige uno de la siguiente lista</label>
+
+										<select name="Seleccionar">
+
+											<option name='Suma'>Suma</option>
+
+											<option name='Resta'>Resta</option>
+
+											<option name='Multiplicacion'>Multiplicacion</option>
+
+											<option name='Division'>Division</option>
+
+										</select>
+
+								  </label>
+
+								</datalist>
+								<br><br>
+							<input type="number" placeholder='Numero:1' name='Num1'>
+							<input type="number" placeholder='Numero:2' name='Num2'>
+							<input type="submit" placeholder='Calcular' name='Btn1'>
+							<input type="reset">
+						</div>
+				</form>
+				<?php
+					if(isset($_POST['Btn1'])){
+						$Numero1=$_POST['Num1'];
+						$Numero2=$_POST['Num2'];
+						$total=0;
+
+						$Seleccionar=$_POST['eleccion'];
+
+						switch ($Seleccionar) {
+							case 'Suma':
+								$total = $Numero1+$Numero2;
+								echo 'la suma de los numeros es de: ',$total;
+								break;
+							case 'Resta':
+								$total = $Numero1-$Numero2;
+								echo 'la Resta de los numeros es de: ',$total;
+								break;
+							case 'Multiplicacion':
+								$total = $Numero1*$Numero2;
+								echo 'la Multiplicacion de los numeros es de: ',$total;
+								break;
+							case 'Division':
+								$total = $Numero1/$Numero2;
+								echo 'la Division de los numeros es de: ',$total;
+								break;
+							default:
+							}
+					}
+				?>
+
+
 				<h2>EJERCICIO N°1</h2>
 			</div>
 		</div>
+
 		<div class="section">
 			<div class="content">
 				<h2>EJERCICIO N°2</h2>
 			</div>
 		</div>
+		
 		<div class="section">
 			<div class="content">
 				<h2>EJERCICIO N°4</h2>
@@ -26,11 +89,14 @@
 		<div class="section">
 			<div class="content">
 				<h2>EJERCICIO N°6</h2>
-			</div>
-		</div>
+            </div>
+        </div>
 	</div>
-
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 	<footer>
+	
 	</footer>
 </body>
 </html>
