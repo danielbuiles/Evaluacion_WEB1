@@ -77,10 +77,51 @@
 
 		<div class="section">
 			<div class="content">
+
+				<form action="index.php" method='POST'>
+					<input type="text" placeholder='Peso' name='peso'>
+					<input type="text" placeholder='Altura' name='Altura'>
+					 <input type="submit" placeholder="enviar" name='Btn2'>
+				</form>
+				<?php
+				if (isset($_POST['Btn2'])) {
+					$pes=$_POST['peso'];
+					$alt=$_POST['Altura'];
+					$IMC=$pes/($alt*$alt);
+					switch ($IMC) {
+						case $IMC<18.5:
+							echo('Peso insufuciente');
+							break;
+							case $IMC>18.5 && $IMC<24.9:
+								echo('Normopeso');
+								break;
+								case $IMC>18.5 && $IMC<24.9:
+									echo('Sobrepeso Grado I');
+									break;
+									case $IMC>25 && $IMC<26.9:
+										echo('Sobrepeso grado II');
+										break;
+										case $IMC>27 && $IMC<29.9:
+											echo('obecidad de tipo I');
+											break;
+											case $IMC>30 && $IMC<34.9:
+												echo('Obesidad de tipo II');
+												break;
+												case $IMC>35 && $IMC<39.9:
+													echo('Obesidad de tipo III (Morbida)');
+													break;
+													case $IMC>=50:
+														echo('Obesidad tipo IV (Extrema)');
+														break;
+						default:
+						}
+
+				}
+				?>
 				<h2>EJERCICIO N°2</h2>
 			</div>
 		</div>
-		
+
 		<div class="section">
 			<div class="content">
 				<h2>EJERCICIO N°4</h2>

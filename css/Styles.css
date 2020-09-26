@@ -21,7 +21,7 @@
    background-attachment: fixed;
 }
 .container .section:nth-child(2){
-    background:  url(https://www.xtrafondos.com/wallpapers/pelicula-the-batman-2021-6091.jpg);
+    background:  url(https://www.xtrafondos.com/wallpapers/dj-marshmello-ilustracion-2d-3552.jpg);
     background-size: cover;
     background-attachment: fixed;
  }
@@ -59,11 +59,4 @@
      padding: 10px 20px;
      margin-top: 10px;
  }
- .Form1{
-    align-items: center;
-    position: relative;
-    height: 200px;
-    width: 1000px;
-    margin-bottom: 50%;
-    margin-left: 60%;
- }
+ 
