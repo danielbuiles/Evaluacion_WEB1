@@ -77,7 +77,6 @@
 
 		<div class="section">
 			<div class="content">
-
 				<form action="index.php" method='POST'>
 					<input type="text" placeholder='Peso' name='peso'>
 					<input type="text" placeholder='Altura' name='Altura'>
@@ -124,9 +123,32 @@
 
 		<div class="section">
 			<div class="content">
+				<form action="index.php" method='POST'>
+					<input type="text" placeholder='Horas Trabajadas' name='Htrabajadas'>
+					<input type="text" placeholder='Horas Extras Trabajadas' name='Hxtras'>
+					<input type="submit" placeholder='Enviar' Name='Btn3'>
+				</form>
+				<?php
+				if (isset($_POST['Btn3'])) {
+					$Htrab=$_POST['Htrabajadas'];
+					$Hxtra=$_POST['Hxtras'];
+					$total=$Htrab+$Hxtra;
+
+					if ($total<=40) {
+						$salario=$total*20000;
+					}
+					else {
+						$Htrab=$Htrab*20000;
+						$Hxtra=$Hxtra*25000;
+						$salario=$Htrab+$Hxtra;
+					}
+					echo('Su salario semanal es de: '.$salario.' Mil pesos');
+				}
+				?>
 				<h2>EJERCICIO N°4</h2>
 			</div>
 		</div>
+		
 		<div class="section">
 			<div class="content">
 				<h2>EJERCICIO N°6</h2>
