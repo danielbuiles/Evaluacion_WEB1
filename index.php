@@ -118,7 +118,7 @@
 				<h2>EJERCICIO N°2</h2>
 			</div>
 		</div>
-
+				
 		<div class="section">
 			<div class="content">
 				<form action="index.php" method='POST'>
@@ -141,6 +141,48 @@
 						$salario=$Htrab+$Hxtra;
 					}
 					echo('Su salario semanal es de: '.$salario.' Mil pesos');
+				}
+				?>
+				<h2>EJERCICIO N°3</h2>
+			</div>
+		</div>
+
+		<div class="section">
+			<div class="content">
+				<form action="index.php" method='POST'>
+					<input type="text" placeholder='N_zapatos' name="Nzapatos">
+					<input type="submit" placeholder='enviar' name='Btn5'>
+				</form>
+				<?php
+				if (isset($_POST['Btn5'])) {
+					$Precio=200000;
+					$Num=$_POST['Nzapatos'];
+					$total=$Precio*$Num;
+
+					if ($Num=3) {
+						$Desc=$total*0.10;
+						$recibo=$total-$Desc;
+						echo('El descuento sobre sus zapatos comprados es de '. $Desc);
+						echo "<br />";
+						echo('Total recibo a pagar: '.$recibo);
+					}
+					if ($Num>3 && $Num<8) {
+						$Desc=$total*0.25;
+						$recibo=$total-$Desc;
+						echo('El descuento sobre sus zapatos comprados es de '. $Desc);
+						echo "<br />";
+						echo('Total recibo a pagar: '.$recibo);
+					}
+					if ($Num>=8) {
+						$Desc=$total*0.50;
+						$recibo=$total-$Desc;
+						echo('El descuento sobre sus zapatos comprados es de '. $Desc);
+						echo "<br />";
+						echo('Total recibo a pagar: '.$recibo);
+					}
+					else{
+						echo('usted no tiene derecho a u8n descuento');
+					}
 				}
 				?>
 				<h2>EJERCICIO N°4</h2>
